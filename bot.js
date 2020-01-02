@@ -29,7 +29,7 @@ bot.on('message', message => {
 	message.author.send("Your ID: "+message.member.id);
   }
   if (message.content === '~help') {
-    message.channel.send("HI我是管理簽到的機器人\n如果你還沒註冊的話, 請輸入 `~create` 來創建\n查看簽到資訊 `~check`\n簽到請打 `~sign`\n\n"+version.version);
+    message.channel.send("HI我是打卡機器人\n如果你還沒註冊的話, 請輸入 `~create` 來創建\n查看簽到資訊 `~check`\n簽到請打 `~sign`\n\n"+version.version);
   }
   if (message.content === '~check') {
 			var id = message.member.id;
