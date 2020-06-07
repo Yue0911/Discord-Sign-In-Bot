@@ -1,0 +1,9 @@
+{
+  "token": "Your Bot TokenID",
+  "mysqlHost" : "127.0.0.1",
+  "mysqlUser" : "your mysql user",
+  "mysqlPass" : "your mysql password",
+  "mysqlDB" : "database",
+  "version" : "V1.3",
+  "botAdminUserId" : "your discord ID"
+}

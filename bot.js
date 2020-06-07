@@ -2,25 +2,20 @@ var Discord = require('discord.js');
 //var logger = require('winston');
 var auth = require('./auth.json');
 
-var botadmin = require('./botadmin.json');
-var sqldb = require('./sqldb.json');
-var sqlhost = require('./sqlhost.json');
-var sqlpass = require('./sqlpass.json');
-var sqluser = require('./sqluser.json');
-var version = require('./version.json');
+var config = require('./config.json');
 
 var mysql = require("mysql");
 
 var bot = new Discord.Client();
 var db = mysql.createConnection({
-    host: sqlhost.mysqlHost,
-    user: sqluser.mysqlUser,
-    password: sqlpass.mysqlPass,
-    database: sqldb.mysqlDB,
+    host: config.mysqlHost,
+    user: config.mysqlUser,
+    password: config.mysqlPass,
+    database: config.mysqlDB,
 	charset: "utf8_unicode_ci"
 });
 bot.on('ready', () => {
-  console.log("Discord Bot is starting on "+version.version);
+  console.log("Discord Bot is starting on "+config.version);
 });
 
 bot.on('message', message => {
@@ -103,4 +98,4 @@ bot.on('message', message => {
 			});
   }
 });
-bot.login(auth.token);
+bot.login(config.token);
